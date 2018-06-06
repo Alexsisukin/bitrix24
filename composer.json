@@ -1,0 +1,21 @@
+{
+  "name": "alexsisukin/bitrix24",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alexandr Sisykin",
+      "email": "alexandr.s@ucoz-team.net"
+    }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "guzzlehttp/guzzle": "^6.3",
+    "monolog/monolog": "1.23.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "alexsisukin\\bitrix24\\": "src/"
+    }
+  }
+}
