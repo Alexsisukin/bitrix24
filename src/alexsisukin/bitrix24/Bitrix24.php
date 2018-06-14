@@ -29,6 +29,7 @@ class Bitrix24
     private $expires;
     private $client_id;
     private $secret_id;
+    private $json_auth;
 
     public function __construct($client_id, $secret)
     {
@@ -67,9 +68,11 @@ class Bitrix24
             $response = $this->Auth()->getRefreshToken();
             if (is_string($response)) {
                 $this->setAuthJson($response);
+                $this->json_auth = $response;
                 return true;
             }
         }
+        $this->json_auth = $json;
         return false;
     }
 
