@@ -205,5 +205,13 @@ class Bitrix24
         $this->expires = $expires;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getJsonAuth()
+    {
+        return $this->json_auth;
+    }
+
 
 }
