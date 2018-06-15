@@ -26,6 +26,7 @@ class Bitrix24
     private $domain;
     private $access_token;
     private $refresh_token;
+    private $state;
     private $expires;
     private $client_id;
     private $secret_id;
@@ -168,6 +169,7 @@ class Bitrix24
         $this->Auth->setSecret($this->secret_id);
         $this->Auth->setClientId($this->client_id);
         $this->Auth->setDomain($this->domain);
+        $this->Auth->setState($this->state);
         $this->Auth->setRefreshToken($this->refresh_token);
         return $this->Auth;
     }
@@ -211,6 +213,14 @@ class Bitrix24
     public function getJsonAuth()
     {
         return $this->json_auth;
+    }
+
+    /**
+     * @param mixed $state
+     */
+    public function setState($state)
+    {
+        $this->state = $state;
     }
 
 
