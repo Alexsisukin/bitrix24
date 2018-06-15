@@ -31,11 +31,13 @@ class Bitrix24
     private $client_id;
     private $secret_id;
     private $json_auth;
+    private $handler_token_save = false;
 
-    public function __construct($client_id, $secret)
+    public function __construct($client_id, $secret, $handler_token_save)
     {
         $this->client_id = $client_id;
         $this->secret_id = $secret;
+        $this->handler_token_save = $handler_token_save;
     }
 
     /**
@@ -70,6 +72,10 @@ class Bitrix24
             if (is_string($response)) {
                 $this->setAuthJson($response);
                 $this->json_auth = $response;
+                if (is_callable($this->handler_token_save)) {
+                    $saver = $this->handler_token_save;
+                    $saver();
+                }
                 return true;
             }
         }
@@ -221,6 +227,14 @@ class Bitrix24
     public function setState($state)
     {
         $this->state = $state;
+    }
+
+    /**
+     * @param bool $handler_token_save
+     */
+    public function setHandlerTokenSave($handler_token_save)
+    {
+        $this->handler_token_save = $handler_token_save;
     }
 
 
