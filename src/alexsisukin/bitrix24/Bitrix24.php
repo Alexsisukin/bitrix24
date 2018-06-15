@@ -74,7 +74,7 @@ class Bitrix24
                 $this->json_auth = $response;
                 if (is_callable($this->handler_token_save)) {
                     $saver = $this->handler_token_save;
-                    $saver();
+                    $saver($response);
                 }
                 return true;
             }
