@@ -290,4 +290,28 @@ class Contacts extends Items
         return $this->jsonDecode($response);
     }
 
+
+    public function StatusList()
+    {
+        $url = 'https://' . $this->domain . '/rest/crm.status.list.json';
+
+        $options = [
+            'json' => [
+                'auth' => $this->access_token,
+                'order' => [
+                    'SORT' => 'ASC'
+                ],
+                'filter' => [
+                    'ENTITY_ID' => 'CONTACT_TYPE'
+                ]
+            ],
+            'headers' => [
+                'Content-Type' => 'application/json'
+            ],
+        ];
+        $response = $this->http_client->Post($url, $options);
+        return $this->jsonDecode($response);
+    }
+
+
 }
