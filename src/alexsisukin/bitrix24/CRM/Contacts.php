@@ -20,184 +20,184 @@ class Contacts extends Items
 
     protected $fields = [
         'ADDRESS' => [
-            'Адрес контакта',
-            'string'
+            'name' => 'Адрес контакта',
+            'type' => 'string'
         ],
         'ADDRESS_2' => [
-            'Вторая страница адреса',
-            'string'
+            'name' => 'Вторая страница адреса',
+            'type' => 'string'
         ],
         'ADDRESS_CITY' => [
-            'Город',
-            'string'
+            'name' => 'Город',
+            'type' => 'string'
         ],
         'ADDRESS_COUNTRY' => [
-            'Страна',
-            'string'
+            'name' => 'Страна',
+            'type' => 'string'
         ],
         'ADDRESS_COUNTRY_CODE' => [
-            'Код страны',
-            'string'
+            'name' => 'Код страны',
+            'type' => 'string'
         ],
         'ADDRESS_POSTAL_CODE' => [
-            'Почтовый индекс',
-            'string'
+            'name' => 'Почтовый индекс',
+            'type' => 'string'
         ],
         'ADDRESS_PROVINCE' => [
-            'Область',
-            'string'
+            'name' => 'Область',
+            'type' => 'string'
         ],
         'ADDRESS_REGION' => [
-            'Район',
-            'string'
+            'name' => 'Район',
+            'type' => 'string'
         ],
         'ASSIGNED_BY_ID' => [
-            'Связано с пользователем по ID',
-            'user'
+            'name' => 'Связано с пользователем по ID',
+            'type' => 'user'
         ],
         'BIRTHDATE' => [
-            'Дата рождения',
-            'date'
+            'name' => 'Дата рождения',
+            'type' => 'date'
         ],
         'COMMENTS' => [
-            'Комментарии',
-            'string'
+            'name' => 'Комментарии',
+            'type' => 'string'
         ],
         'COMPANY_ID' => [
-            'Привязка контакта к компании',
-            'crm_company'
+            'name' => 'Привязка контакта к компании',
+            'type' => 'crm_company'
         ],
         'COMPANY_IDS' => [
-            'Привязка контакта к нескольким компаниям',
-            'crm_company'
+            'name' => 'Привязка контакта к нескольким компаниям',
+            'type' => 'crm_company'
         ],
         'CREATED_DY_ID' => [
-            'Кем создана',
-            'user'
+            'name' => 'Кем создана',
+            'type' => 'user'
         ],
         'DATA_CREATE' => [
-            'Дата создания',
-            'datetime'
+            'name' => 'Дата создания',
+            'type' => 'datetime'
         ],
         'DATA_MODIFY' => [
-            'Дата изменения',
-            'datetime'
+            'name' => 'Дата изменения',
+            'type' => 'datetime'
         ],
         'EMAIL' => [
-            'Адрес электронной почты',
-            'crm_multifield'
+            'name' => 'Адрес электронной почты',
+            'type' => 'crm_multifield'
         ],
         'EXPORT' => [
-            'Участвует ли контакт в экспорте. Eсли N, то выгрузить его невозможно.',
-            'char'
+            'name' => 'Участвует ли контакт в экспорте. Eсли N, то выгрузить его невозможно.',
+            'type' => 'char'
         ],
         'FACE_ID' => [
-            'Привязка к лицам из модуля faceid',
-            'integer'
+            'name' => 'Привязка к лицам из модуля faceid',
+            'type' => 'integer'
         ],
         'HAS_MAIL' => [
-            'Проверка заполненности поля электронной почты',
-            'char'
+            'name' => 'Проверка заполненности поля электронной почты',
+            'type' => 'char'
         ],
         'HAS_PHONE' => [
-            'Проверка заполненности поля телефон',
-            'char'
+            'name' => 'Проверка заполненности поля телефон',
+            'type' => 'char'
         ],
         'HONORIFIC' => [
-            'Вид обращения',
-            'crm_status'
+            'name' => 'Вид обращения',
+            'type' => 'crm_status'
         ],
         'ID' => [
-            'Идентификатор контакта',
-            'integer'
+            'name' => 'Идентификатор контакта',
+            'type' => 'integer'
         ],
         'IM' => [
-            'Мессенджеры',
-            'crm_multifield'
+            'name' => 'Мессенджеры',
+            'type' => 'crm_multifield'
         ],
         'LAST_NAME' => [
-            'Фамилия',
-            'string'
+            'name' => 'Фамилия',
+            'type' => 'string'
         ],
         'LEAD_ID' => [
-            'Идентификатор лида, связанного с контактом',
-            'crm_lead'
+            'name' => 'Идентификатор лида, связанного с контактом',
+            'type' => 'crm_lead'
         ],
         'MODIFY_BY_ID' => [
-            'Идентификатор автора последнего изменения',
-            'user'
+            'name' => 'Идентификатор автора последнего изменения',
+            'type' => 'user'
         ],
         'NAME' => [
-            'Имя',
-            'string'
+            'name' => 'Имя',
+            'type' => 'string'
         ],
         'OPENED' => [
-            'Доступен для всех',
-            'char'
+            'name' => 'Доступен для всех',
+            'type' => 'char'
         ],
         'ORIGINATOR_ID' => [
-            'Идентификатор источника данных',
-            'string'
+            'name' => 'Идентификатор источника данных',
+            'type' => 'string'
         ],
         'ORIGIN_ID' => [
-            'Идентификатор элемента в источнике данных',
-            'string'
+            'name' => 'Идентификатор элемента в источнике данных',
+            'type' => 'string'
         ],
         'ORIGIN_VERSION' => [
-            'Оригинальная версия',
-            'string'
+            'name' => 'Оригинальная версия',
+            'type' => 'string'
         ],
         'PHONE' => [
-            'Телефон контакта',
-            'crm_multifield'
+            'name' => 'Телефон контакта',
+            'type' => 'crm_multifield'
         ],
         'PHOTO' => [
-            'Фото контакта',
-            'file'
+            'name' => 'Фото контакта',
+            'type' => 'file'
         ],
         'POST' => [
-            'Должность',
-            'string'
+            'name' => 'Должность',
+            'type' => 'string'
         ],
         'SECOND_NAME' => [
-            'Отчество',
-            'string'
+            'name' => 'Отчество',
+            'type' => 'string'
         ],
         'SOURCE_DESCRIPTION' => [
-            'Описание источника?',
-            'string'
+            'name' => 'Описание источника?',
+            'type' => 'string'
         ],
         'SOURCE_ID' => [
-            'Идентификатор источника',
-            'crm_status'
+            'name' => 'Идентификатор источника',
+            'type' => 'crm_status'
         ],
         'TYPE_ID' => [
-            'Идентификатор типа',
-            'crm_status'
+            'name' => 'Идентификатор типа',
+            'type' => 'crm_status'
         ],
         'UTM_CAMPAIGN' => [
-            'Обозначение рекламной кампании',
-            'string'
+            'name' => 'Обозначение рекламной кампании',
+            'type' => 'string'
         ],
         'UTM_CONTENT' => [
-            'Содержание кампании',
-            'string'
+            'name' => 'Содержание кампании',
+            'type' => 'string'
         ],
         'UTM_MEDIUM' => [
-            'Тип трафика',
-            'string'
+            'name' => 'Тип трафика',
+            'type' => 'string'
         ],
         'UTM_SOURSE' => [
-            'Рекламная система',
-            'string'
+            'name' => 'Рекламная система',
+            'type' => 'string'
         ],
         'UTM_TERM' => [
-            'Условие поиска кампании',
-            'string'
+            'name' => 'Условие поиска кампании',
+            'type' => 'string'
         ],
         'WEB' => [
-            'URL ресурсов контакта',
-            'crm_multifield'
+            'name' => 'URL ресурсов контакта',
+            'type' => 'crm_multifield'
         ],
     ];
 
