@@ -91,7 +91,7 @@ class Items
      * @param $required_fields array
      * @return false|array
      */
-    protected function validateFields($fields, $bitrix_fields, $required_fields)
+    protected function validateFields($fields, $bitrix_fields, $required_fields = [])
     {
         if (!isset($bitrix_fields['result'])) {
             return false;
@@ -101,11 +101,14 @@ class Items
                 unset($fields[$field_name]);
             }
         }
-        foreach ($required_fields as $required_field) {
-            if (!isset($fields[$required_field])) {
-                return false;
+        if (is_array($required_fields)) {
+            foreach ($required_fields as $required_field) {
+                if (!isset($fields[$required_field])) {
+                    return false;
+                }
             }
         }
+
         return $fields;
     }
 }

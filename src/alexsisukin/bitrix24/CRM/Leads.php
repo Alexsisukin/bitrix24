@@ -289,5 +289,27 @@ class Leads extends Items
         return $this->jsonDecode($response);
     }
 
-
+    public function LeadUpdate($id , $data)
+    {
+        if (!isset($data['fields'])) {
+            return false;
+        }
+        $bitrix_fields = $this->getLeadFields();
+        $data['fields'] = $this->validateFields($data['fields'], $bitrix_fields);
+        if ($data['fields'] === false) {
+            return false;
+        }
+        $url = 'https://' . $this->domain . '/rest/crm.lead.update.json';
+        $data['auth'] = $this->access_token;
+        $data['id'] = $id;
+        $options = [
+            'json' => $data
+            ,
+            'headers' => [
+                'Content-Type' => 'application/json'
+            ],
+        ];
+        $response = $this->http_client->Post($url, $options);
+        return $this->jsonDecode($response);
+    }
 }
