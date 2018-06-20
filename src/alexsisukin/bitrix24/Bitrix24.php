@@ -12,6 +12,7 @@ namespace alexsisukin\bitrix24;
 use alexsisukin\bitrix24\CRM\Companies;
 use alexsisukin\bitrix24\CRM\Contacts;
 use alexsisukin\bitrix24\CRM\Leads;
+use alexsisukin\bitrix24\User\Users;
 
 class Bitrix24
 {
@@ -25,6 +26,8 @@ class Bitrix24
     private $contacts;
     /** @var Companies */
     private $companies;
+    /** @var Users */
+    private $users;
 
     private $domain;
     private $access_token;
@@ -117,6 +120,14 @@ class Bitrix24
         $this->companies->setDomain($this->domain);
         $this->companies->setAccessToken($this->access_token);
         return $this->companies;
+    }
+
+    public function Users()
+    {
+        $this->users = new Users();
+        $this->users->setDomain($this->domain);
+        $this->users->setAccessToken($this->access_token);
+        return $this->users;
     }
 
     /**
