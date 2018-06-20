@@ -289,7 +289,7 @@ class Leads extends Items
         return $this->jsonDecode($response);
     }
 
-    public function LeadUpdate($id , $data)
+    public function LeadUpdate($id, $data)
     {
         if (!isset($data['fields'])) {
             return false;
@@ -305,6 +305,23 @@ class Leads extends Items
         $options = [
             'json' => $data
             ,
+            'headers' => [
+                'Content-Type' => 'application/json'
+            ],
+        ];
+        $response = $this->http_client->Post($url, $options);
+        return $this->jsonDecode($response);
+    }
+
+    public function LeadGet($id)
+    {
+        $url = 'https://' . $this->domain . '/rest/crm.lead.get.json';
+
+        $options = [
+            'json' => [
+                'auth' => $this->access_token,
+                'id'=>$id
+            ],
             'headers' => [
                 'Content-Type' => 'application/json'
             ],

@@ -290,6 +290,29 @@ class Contacts extends Items
         return $this->jsonDecode($response);
     }
 
+    public function ContactUpdate($id, $data)
+    {
+        if (!isset($data['fields'])) {
+            return false;
+        }
+        $bitrix_fields = $this->getContactFields();
+        $data['fields'] = $this->validateFields($data['fields'], $bitrix_fields);
+        if ($data['fields'] === false) {
+            return false;
+        }
+        $url = 'https://' . $this->domain . '/rest/crm.contact.update.json';
+        $data['auth'] = $this->access_token;
+        $data['id'] = $id;
+        $options = [
+            'json' => $data
+            ,
+            'headers' => [
+                'Content-Type' => 'application/json'
+            ],
+        ];
+        $response = $this->http_client->Post($url, $options);
+        return $this->jsonDecode($response);
+    }
 
     public function StatusList()
     {

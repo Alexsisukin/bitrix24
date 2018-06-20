@@ -299,6 +299,30 @@ class Companies extends Items
         return $this->jsonDecode($response);
     }
 
+    public function CompanyUpdate($id, $data)
+    {
+        if (!isset($data['fields'])) {
+            return false;
+        }
+        $bitrix_fields = $this->getCompanyFields();
+        $data['fields'] = $this->validateFields($data['fields'], $bitrix_fields);
+        if ($data['fields'] === false) {
+            return false;
+        }
+        $url = 'https://' . $this->domain . '/rest/crm.company.update.json';
+        $data['auth'] = $this->access_token;
+        $data['id'] = $id;
+        $options = [
+            'json' => $data
+            ,
+            'headers' => [
+                'Content-Type' => 'application/json'
+            ],
+        ];
+        $response = $this->http_client->Post($url, $options);
+        return $this->jsonDecode($response);
+    }
+
     public function CompanyGet($id)
     {
         $url = 'https://' . $this->domain . '/rest/crm.company.get.json';
