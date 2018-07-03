@@ -221,6 +221,21 @@ class Leads extends Items
             'type' => 'crm_multifield'
 
         ],
+        'LAST_NAME' => [
+            'name' => 'Фамилия',
+            'type' => 'string'
+
+        ],
+        'CURRENCY_ID' => [
+            'name' => 'Идентификатор валюты',
+            'type' => 'string'
+
+        ],
+        'OPPORTUNITY' => [
+            'name' => 'Предполагаемая сумма',
+            'type' => 'string'
+
+        ],
     ];
 
 
