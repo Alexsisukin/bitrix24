@@ -38,6 +38,10 @@ class Bitrix24
     private $secret_id;
     private $json_auth;
     private $handler_token_save = false;
+    public $name_lead_fields = null;
+    public $name_company_fields = null;
+    public $name_contact_fields = null;
+
 
     public function __construct($client_id, $secret, $handler_token_save)
     {
@@ -95,6 +99,9 @@ class Bitrix24
     public function Leads()
     {
         $this->leads = new Leads();
+        if (!is_null($this->name_lead_fields)) {
+            $this->leads->fields = $this->name_lead_fields;
+        }
         $this->leads->setDomain($this->domain);
         $this->leads->setAccessToken($this->access_token);
         return $this->leads;
@@ -106,6 +113,9 @@ class Bitrix24
     public function Contacts()
     {
         $this->contacts = new Contacts();
+        if (!is_null($this->name_contact_fields)){
+            $this->contacts->fields = $this->name_contact_fields;
+        }
         $this->contacts->setDomain($this->domain);
         $this->contacts->setAccessToken($this->access_token);
         return $this->contacts;
@@ -117,6 +127,9 @@ class Bitrix24
     public function Companies()
     {
         $this->companies = new Companies();
+        if (!is_null($this->name_company_fields)){
+            $this->companies->fields = $this->name_company_fields;
+        }
         $this->companies->setDomain($this->domain);
         $this->companies->setAccessToken($this->access_token);
         return $this->companies;

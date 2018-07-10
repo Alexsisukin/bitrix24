@@ -14,7 +14,7 @@ use alexsisukin\bitrix24\Items;
 class Companies extends Items
 {
 
-    protected $fields = [
+    public $fields = [
         'ADDRESS' => [
             'name' => 'Адрес контакта',
             'type' => 'string'

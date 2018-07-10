@@ -18,7 +18,7 @@ class Contacts extends Items
     /** @var Client */
     protected $http_client;
 
-    protected $fields = [
+    public $fields = [
         'ADDRESS' => [
             'name' => 'Адрес контакта',
             'type' => 'string'
